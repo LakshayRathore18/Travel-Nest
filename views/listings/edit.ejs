@@ -1,0 +1,73 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h1 class="mb-4 text-center">Edit Listing</h1>
+
+                <form method="post" action="/listings/<%= listing._id %>?_method=PUT" class="custom-form needs-validation" novalidate enctype="multipart/form-data">
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="Enter Title" name="listing[title]" value="<%= listing.title %>" required>
+                        <div class="invalid-feedback">Please enter a valid title.</div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" placeholder="Enter description" name="listing[description]" rows="4" required><%= listing.description %></textarea>
+                        <div class="invalid-feedback">Please enter a valid description.</div>
+                    </div>
+
+                    <!-- Image Preview -->
+                    <div class="mb-3">
+                        Original Listing Image <br> 
+                        <img src="<%= originalImageUrl %>" alt="image preview">
+                    </div>
+
+                    <!-- Image URL -->
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload new image</label>
+                        <input type="file" class="form-control" id="image" placeholder="Upload Image" name="listing[image]" value="<%= listing.image %>" >
+                    </div>
+
+                    <!-- Price and Country in Same Line -->
+                    <div class="mb-3 row">
+                        <div class="col-md-6">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="price" placeholder="Enter price" name="listing[price]" value="<%= listing.price %>" required min="1">
+                            <div class="invalid-feedback">Please enter a valid price (greater than 0).</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="country" class="form-label">Country</label>
+                            <select class="form-control" id="country" name="listing[country]" required>
+                                <option value="" disabled>Select a Country</option>
+                                <% countries.forEach(country => { %>
+                                    <option value="<%= country %>" <%= country === listing.country ? 'selected' : '' %>><%= country %></option>
+                                <% }) %>
+                            </select>
+                            <div class="invalid-feedback">Please select a country.</div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location" placeholder="Enter location" name="listing[location]" value="<%= listing.location %>" required>
+                        <div class="invalid-feedback">Please enter a valid location.</div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex gap-3">
+                        <!-- Save Changes Button -->
+                        <button type="submit" class="btn btn-success w-100">Save Changes</button>
+
+                        <!-- Cancel Button (Optional) -->
+                        <a href="/listings/<%= listing._id %>" class="btn btn-danger w-100">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

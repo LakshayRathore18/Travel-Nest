@@ -1,0 +1,45 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h1 class="mb-4 text-center">Signup For TravelNest</h1>
+
+                <form method="post" action="/signup" novalidate class="custom-form needs-validation">
+                    
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
+                        <div class="invalid-feedback">Please enter a username.</div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                        <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>
+                        <div class="invalid-feedback">Please enter a password.</div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" required>
+                        <div class="invalid-feedback">Please confirm your password.</div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,61 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h1 class="mb-4 text-center">New Listing</h1>
+
+                <form method="post" action="/listings" novalidate class="custom-form needs-validation" enctype="multipart/form-data">
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="Enter Title" name="listing[title]" required>
+                        <div class="invalid-feedback">Please enter a title.</div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" placeholder="Enter description" name="listing[description]" rows="4" required></textarea>
+                        <div class="invalid-feedback">Please enter a description.</div>
+                    </div>
+
+                    <!-- Image URL -->
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" id="image" placeholder="Upload Image" name="listing[image]" required>
+                    </div>
+
+                    <!-- Price and Country in Same Line -->
+                    <div class="mb-3 row">
+                        <div class="col-md-6">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="price" placeholder="Enter price" name="listing[price]" required min="1">
+                            <div class="invalid-feedback">Please enter a valid price.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="country" class="form-label">Country</label>
+                            <select class="form-control" id="country" name="listing[country]" required>
+                                <option value="" disabled selected>Select a Country</option>
+                                <% countries.forEach(country => { %>
+                                    <option value="<%= country %>"><%= country %></option>
+                                <% }) %>
+                            </select>
+                            <div class="invalid-feedback">Please select a country.</div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location" placeholder="Enter location" name="listing[location]" required>
+                        <div class="invalid-feedback">Please enter a valid location.</div>
+                    </div>
+
+                    <!-- Submit Button (Green) -->
+                    <button type="submit" class="btn btn-success w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

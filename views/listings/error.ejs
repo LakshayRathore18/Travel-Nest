@@ -1,0 +1,14 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="container my-5">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">An Error Occurred!</h4>
+            <p><%= err.message || "Something went wrong. Please try again later." %></p>
+        </div>
+
+        <!-- Optional: Back Button -->
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Go Back to Home</a>
+        </div>
+    </div>
+</body>

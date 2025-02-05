@@ -2,7 +2,7 @@
 
 **Travel Nest** is a property listing platform, allowing users to browse and list properties for rent. Inspired by services like Airbnb, this app focuses on simplifying property search by location and providing an intuitive interface for listing and managing rentals.
 
-You can check out the live version of the application at travel-nest-xbhg.onrender.com
+You can check out the live version of the application at [Travel Nest](https://travel-nest-xbhg.onrender.com).
 
 ## Features
 

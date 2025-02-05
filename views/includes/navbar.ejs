@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Logo -->
         <a class="navbar-brand" href="/listings">
-            <i class="fa-solid fa-map-location-dot"></i> <span>Travel Nest</span> <!-- Optional Brand Text -->
+            <i class="fa-solid fa-map-location-dot"></i> <span>Travel Nest</span>
         </a>
 
         <!-- Toggler -->
@@ -13,10 +13,11 @@
         <!-- Navbar Content -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <!-- Center Search Bar -->
-            <form class="d-flex search-form mx-auto">
+            <form class="d-flex search-form mx-auto" action="/listings/search" method="GET">
                 <input 
                     class="form-control me-2" 
                     type="search" 
+                    name="location" 
                     placeholder="Search destinations..." 
                     aria-label="Search"
                 >
@@ -24,6 +25,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
+            
 
             <!-- Right Links -->
             <div class="navbar-nav">
@@ -38,6 +40,7 @@
         </div>
     </div>
 </nav>
+
 
 <style>
     /* Navbar Adjustments */
@@ -101,6 +104,7 @@
         border: none;
         padding: 0.4rem 1rem;
         transition: background-color 0.3s ease-in-out;
+        margin-left: -0.7rem;
     }
 
     .btn-search:hover {

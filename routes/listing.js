@@ -9,7 +9,8 @@ const {
     showListing, 
     renderEditForm, 
     updateListing, 
-    destroyListing 
+    destroyListing,
+    searchListings 
 } = require("../controllers/listings.js");
 const multer  = require('multer')
 const {storage} = require('../cloudConfig.js');
@@ -25,7 +26,9 @@ router.route("/")
         validateListing, 
         wrapAsync(createListing)
     );
-    
+
+// Search By Location
+router.get("/search", wrapAsync(searchListings));
 
 // Create Form Route
 router.get("/new", isLoggedIn,wrapAsync(renderNewForm)); 

@@ -111,9 +111,6 @@ module.exports.destroyListing = async (req, res) => {
 // Search Listings by Location
 module.exports.searchListings = async (req, res) => {
   const { location } = req.query;
-  console.log("hemlo");
-  console.log("Searching for location:", location);
-
   if (!location) {
     return res.redirect("/listings"); // If no location is entered, redirect to all listings
   }
